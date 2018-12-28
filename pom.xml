@@ -4,47 +4,10 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>tools.mdsd</groupId>
-	<artifactId>base-parent</artifactId>	
+	<artifactId>parent-aggregator</artifactId>	
 	<version>0.1.0-SNAPSHOT</version>
-
-	<name>MDSD.tools Base Parent</name>
-	<description>A common base POM for all Maven using builds of MDSD.tools.</description>
-	<url>http://mdsd.tools</url>
 	<packaging>pom</packaging>
 
-	<licenses>
-		<license>
-			<name>The Apache License, Version 2.0</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-		</license>
-	</licenses>
-
-	<developers>
-		<developer>
-			<name>Stephan Seifermann</name>
-			<email>stephan.seifermann@kit.edu</email>
-			<organization>Karlsruhe Institute of Technology (KIT), Germany</organization>
-			<organizationUrl>http://kit.edu</organizationUrl>
-		</developer>
-	</developers>
-
-	<scm>
-		<connection>scm:git:git://github.com/mdsd-tools/maven-build-parents.git</connection>
-		<developerConnection>scm:git:ssh://github.com/mdsd-tools/maven-build-parents.git</developerConnection>
-		<url>http://github.com/mdsd-tools/maven-build-parents/tree/master</url>
-	</scm>
-
-	<distributionManagement>
-		<snapshotRepository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-		</snapshotRepository>
-		<repository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-		</repository>
-	</distributionManagement>
-	
 	<properties>
 		<maven.deploy.skip>true</maven.deploy.skip>
 	</properties>
@@ -54,24 +17,5 @@
 		<module>eclipse/updatesite</module>
 		<module>eclipse/product</module>
 	</modules>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-gpg-plugin</artifactId>
-				<version>1.6</version>
-				<executions>
-					<execution>
-						<id>sign-artifacts</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>sign</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
 
 </project>
