@@ -1,6 +1,6 @@
 # Maven-Build-Parents
 
-Using this base POM, you can define Maven Tycho based builds with little effort. The parent POM covers
+Using the `eclipse-parent-updatesite` base POM, you can define Maven Tycho based builds with little effort. The parent POM covers
 * compilation of java and xtend code
 * building of plugins and features
 * building of source plugins and source features
@@ -11,12 +11,12 @@ Using this base POM, you can define Maven Tycho based builds with little effort.
 ## Requirements
 * your project has to have a root POM that is an aggregating POM as well
 * you have to activate the following extensions in the `extensions.xml` in the `.mvn` folder
-  * org.eclipse.tycho.extras:tycho-pomless:1.3.0
-  * org.palladiosimulator:tycho-tp-refresh-maven-plugin:0.2.3
+  * `org.eclipse.tycho.extras:tycho-pomless:1.3.0`
+  * `org.palladiosimulator:tycho-tp-refresh-maven-plugin:0.2.3`
 * you have to refer to the parent POM in your root POM
 
 ## Target Platform
-You can define your target platform explicitly or by just giving repository URLs to resolve bundles. If you want to use the latter, you have to use the `eclipse-parent-project`. You should, however, only use this method for product builds.
+You can define your target platform explicitly or by just giving repository URLs to resolve bundles. If you want to use the latter, you have to use the `eclipse-parent-product`. You should, however, only use this method for product builds.
 
 To define your target platform explicitly, you have to create target platform definitions. The parent POM will take care of merging multiple target definitions. You can refer to target files by defining a property `org.palladiosimulator.maven.tychotprefresh.tplocation.n` with the path to the file. You can use project coordinates (`groupdId:artifactId:version:classifier:fileExtension`) as well if your target definition resides inside a maven artifact. Please note that you have to use different numbers for `n` starting with 1.
 
