@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>tools.mdsd</groupId>
+		<artifactId>eclipse-parent</artifactId>
+		<version>0.1.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>eclipse-parent-updatesite</artifactId>
+	<name>${project.artifactId}</name>
+	<description>A common parent POM for all Eclipse Update Site builds of MDSD.tools.</description>
+	<url>http://mdsd.tools</url>
+	<packaging>pom</packaging>
+
+	<profiles>
+
+		<profile>
+			<id>updatesite-build</id>
+			<activation>
+				<file>
+					<missing>.maven_disable_updatesite-build</missing>
+				</file>
+			</activation>
+			<properties>
+				<org.palladiosimulator.maven.tychotprefresh.tplocation.0>tools.mdsd:eclipse-target-platforms:0.1.0:eclipse-modeling-photon-0:target</org.palladiosimulator.maven.tychotprefresh.tplocation.0>
+				<org.palladiosimulator.maven.tychotprefresh.tpproject.groupId>tools.mdsd</org.palladiosimulator.maven.tychotprefresh.tpproject.groupId>
+				<org.palladiosimulator.maven.tychotprefresh.tpproject.artifactId>target-platform-merged-temporary</org.palladiosimulator.maven.tychotprefresh.tpproject.artifactId>
+				<org.palladiosimulator.maven.tychotprefresh.tpproject.version>1.0.0</org.palladiosimulator.maven.tychotprefresh.tpproject.version>
+				<org.palladiosimulator.maven.tychotprefresh.tpproject.classifier>merged-temporary</org.palladiosimulator.maven.tychotprefresh.tpproject.classifier>
+				<org.palladiosimulator.maven.tychotprefresh.tpproject.type>target</org.palladiosimulator.maven.tychotprefresh.tpproject.type>
+			</properties>
+			<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<groupId>org.eclipse.tycho</groupId>
+							<artifactId>target-platform-configuration</artifactId>
+							<version>${tycho.version}</version>
+							<configuration>
+								<target>
+									<artifact>
+										<groupId>${org.palladiosimulator.maven.tychotprefresh.tpproject.groupId}</groupId>
+										<artifactId>${org.palladiosimulator.maven.tychotprefresh.tpproject.artifactId}</artifactId>
+										<version>${org.palladiosimulator.maven.tychotprefresh.tpproject.version}</version>
+										<classifier>${org.palladiosimulator.maven.tychotprefresh.tpproject.classifier}</classifier> 
+									</artifact>
+								</target>
+								<environments>
+									<environment>
+										<os>linux</os>
+										<ws>gtk</ws>
+										<arch>x86</arch>
+									</environment>
+									<environment>
+										<os>linux</os>
+										<ws>gtk</ws>
+										<arch>x86_64</arch>
+									</environment>
+									<environment>
+										<os>win32</os>
+										<ws>win32</ws>
+										<arch>x86</arch>
+									</environment>
+									<environment>
+										<os>win32</os>
+										<ws>win32</ws>
+										<arch>x86_64</arch>
+									</environment>
+									<environment>
+										<os>macosx</os>
+										<ws>cocoa</ws>
+										<arch>x86_64</arch>
+									</environment>
+								</environments>
+								<!-- fixes test execution on Java 11 -->
+								<!-- https://bugs.eclipse.org/bugs/show_bug.cgi?id=541403 -->
+								<dependency-resolution>
+									<extraRequirements>
+										<requirement>
+											<type>eclipse-plugin</type>
+											<id>javax.annotation</id>
+											<versionRange>0.0.0</versionRange>
+										</requirement>
+									</extraRequirements>
+								</dependency-resolution>
+							</configuration>
+						</plugin>
+						<plugin>
+							<groupId>org.palladiosimulator</groupId>
+							<artifactId>tycho-tp-refresh-maven-plugin</artifactId>
+							<version>${org.palladiosimulator.maven.tychotprefresh.version}</version>
+							<executions>
+								<execution>
+									<id>target-platform-copy</id>
+									<goals>
+										<goal>copy</goal>
+									</goals>
+								</execution>
+							</executions>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+			</build>
+		</profile>
+
+	</profiles>
+
+</project>
