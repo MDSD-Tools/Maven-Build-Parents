@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>tools.mdsd</groupId>
 	<artifactId>eclipse-parent</artifactId>	
-	<version>0.1.1-SNAPSHOT</version>
+	<version>0.1.1</version>
 	<name>${project.artifactId}</name>
 	<description>A common parent POM for all Eclipse builds of MDSD.tools.</description>
 	<url>http://mdsd.tools</url>
