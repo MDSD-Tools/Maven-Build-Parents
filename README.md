@@ -30,3 +30,8 @@ You can always have a look at the generated target platform definition in the `t
 
 ## Update site / JavaDoc
 To define an update site, you have to create a POM with packaging type `eclipse-repository` and place a `category.xml` besides it. You can edit this file using the default Eclipse editors. The resulting update site will be placed in `target/repository`. The JavaDoc files will be placed in a `javadoc` folder inside the repository.
+
+## Automated MWE2 Execution
+As part of our continuous effort to improve the separation between generated code and custom implementations we provide support to automatically execute MWE2-based workflows during project builds. Per project, you can specify a workflow to be executed during Maven's generate-sources phase and thereby before code compilation. The workflow needs to be saved as `workflow/generate.mwe2` in order to trigger the automated execution. Similarly, by providing a `workflow/clean.mwe2` workflow you can extend Maven's clean phase with custom logic to remove generated source code.
+
+The workflows are expected to accept a parameter `workspaceRoot` which will be provided with the outermost project root. The parameter should be passed as `platformUri` to `StandaloneSetup` bean of your workflow. Make sure to set `scanClassPath=true` to enable the workflow to create proper `platform:/resource/{project name}` URI mappings for your eclipse projects.
