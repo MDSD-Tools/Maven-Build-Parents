@@ -42,12 +42,8 @@
 
 		<!-- Build configuration of parent POM itself -->
 		<profile>
-			<id>local-build</id>
-			<activation>
-				<file>
-					<exists>.maven_local-build</exists>
-				</file>
-			</activation>
+			<id>local-build-deployable</id>
+			<!-- activate this profile explicitly by adding -Plocal-build-deployable to the maven command -->
 			<distributionManagement>
 				<snapshotRepository>
 					<id>ossrh</id>
