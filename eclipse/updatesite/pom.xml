@@ -24,7 +24,7 @@
 				</file>
 			</activation>
 			<properties>
-				<org.palladiosimulator.maven.tychotprefresh.tplocation.0>tools.mdsd:eclipse-target-platforms:0.1.2:eclipse-modeling-photon-0:target</org.palladiosimulator.maven.tychotprefresh.tplocation.0>
+				<org.palladiosimulator.maven.tychotprefresh.tplocation.0>tools.mdsd:eclipse-target-platforms:0.1.2:eclipse-modeling-2019-03:target</org.palladiosimulator.maven.tychotprefresh.tplocation.0>
 				<org.palladiosimulator.maven.tychotprefresh.tpproject.groupId>tools.mdsd</org.palladiosimulator.maven.tychotprefresh.tpproject.groupId>
 				<org.palladiosimulator.maven.tychotprefresh.tpproject.artifactId>target-platform-merged-temporary</org.palladiosimulator.maven.tychotprefresh.tpproject.artifactId>
 				<org.palladiosimulator.maven.tychotprefresh.tpproject.version>1.0.0</org.palladiosimulator.maven.tychotprefresh.tpproject.version>
@@ -51,17 +51,7 @@
 									<environment>
 										<os>linux</os>
 										<ws>gtk</ws>
-										<arch>x86</arch>
-									</environment>
-									<environment>
-										<os>linux</os>
-										<ws>gtk</ws>
 										<arch>x86_64</arch>
-									</environment>
-									<environment>
-										<os>win32</os>
-										<ws>win32</ws>
-										<arch>x86</arch>
 									</environment>
 									<environment>
 										<os>win32</os>
