@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>tools.mdsd</groupId>
 		<artifactId>eclipse-parent</artifactId>
-		<version>0.2.1-SNAPSHOT</version>
+		<version>0.3.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>eclipse-parent-product</artifactId>
 	<name>${project.artifactId}</name>
