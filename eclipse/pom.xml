@@ -36,6 +36,25 @@
 	<properties>
 		<tycho.version>1.3.0</tycho.version>
 		<org.palladiosimulator.maven.tychotprefresh.version>0.2.4</org.palladiosimulator.maven.tychotprefresh.version>
+		<javadoc.args>
+			-tag "generated:a:Generated class or method."
+			-tag "model:a:EMF model class or method."
+			-tag "ordered:a:Ordered collection."
+			-tag 'noimplement:a:Restriction:'
+			-tag 'noextend:a:Restriction:'
+			-tag 'noreference:a:Restriction:'
+			-tag 'noinstantiate:a:Restriction:'
+			-tag 'nooverride:a:Restriction:'
+			-tag 'category:a:Category:'
+			-link ${java.api.doc}
+			-link http://help.eclipse.org/2019-06/topic/org.eclipse.platform.doc.isv/reference/api
+			-link https://download.eclipse.org/modeling/emf/emf/javadoc/2.11/
+			-link https://download.eclipse.org/modeling/emft/mwe/javadoc/2.9/
+		</javadoc.args>
+		<!-- The property is meant to be overridden but still has to contain valid content, so we just repeat valid content. -->
+		<javadoc.additional.args>
+			-link ${java.api.doc}
+		</javadoc.additional.args>
 	</properties>
 
 	<profiles>
@@ -210,8 +229,8 @@
 			<properties>
 				<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 				<project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
-				<java.version>1.8</java.version>
-				<java.api.doc>http://docs.oracle.com/javase/8/docs/api/</java.api.doc>
+				<java.version>11</java.version>
+				<java.api.doc>https://docs.oracle.com/en/java/javase/11/docs/api/</java.api.doc>
 				<maven.compiler.target>${java.version}</maven.compiler.target>
 				<maven.compiler.source>${java.version}</maven.compiler.source>
 			</properties>
@@ -222,7 +241,7 @@
 						<plugin>
 							<groupId>org.apache.maven.plugins</groupId>
 							<artifactId>maven-compiler-plugin</artifactId>
-							<version>3.8.0</version>
+							<version>3.8.1</version>
 						</plugin>
 
 						<plugin>
@@ -287,7 +306,7 @@
 						<plugin>
 							<groupId>org.apache.maven.plugins</groupId>
 							<artifactId>maven-clean-plugin</artifactId>
-							<version>3.0.0</version>
+							<version>3.1.0</version>
 							<executions>
 								<execution>
 									<id>gen-clean</id>
@@ -316,7 +335,7 @@
 						<plugin>
 							<groupId>org.jacoco</groupId>
 							<artifactId>jacoco-maven-plugin</artifactId>
-							<version>0.8.2</version>
+							<version>0.8.4</version>
 							<executions>
 								<execution>
 									<id>jacoco-prepare</id>
@@ -344,7 +363,7 @@
 						<plugin>
 							<groupId>org.palladiosimulator</groupId>
 							<artifactId>tycho-document-bundle-plugin</artifactId>
-							<version>1.1.3</version>
+							<version>1.1.4</version>
 							<executions>
 								<execution>
 									<id>eclipse-javadoc</id>
@@ -358,12 +377,8 @@
 										<skipTocGen>true</skipTocGen>
 										<javadocOptions>
 											<additionalArguments>
-												<additionalArgument>-tag "generated:a:Generated class or method."</additionalArgument>
-												<additionalArgument>-tag "model:a:EMF model class or method."</additionalArgument>
-												<additionalArgument>-tag "ordered:a:Ordered collection."</additionalArgument>
-												<additionalArgument>-link ${java.api.doc}</additionalArgument>
-												<additionalArgument>-link http://help.eclipse.org/photon/topic/org.eclipse.platform.doc.isv/reference/api/</additionalArgument>
-												<additionalArgument>-link http://download.eclipse.org/modeling/emf/emf/javadoc/2.11/</additionalArgument>
+												<additionalArgument>${javadoc.args}</additionalArgument>
+												<additionalArgument>${javadoc.additional.args}</additionalArgument>
 											</additionalArguments>
 										</javadocOptions>
 									</configuration>
@@ -388,7 +403,7 @@
 					<plugin>
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>exec-maven-plugin</artifactId>
-						<version>1.4.0</version>
+						<version>1.6.0</version>
 						<executions>
 							<execution>
 								<id>ExecuteMWE2LauncherForGenerate</id>
@@ -405,8 +420,7 @@
 									</arguments>
 									<classpathScope>compile</classpathScope>
 									<includePluginDependencies>true</includePluginDependencies>
-									<cleanupDaemonThreads>false
-									</cleanupDaemonThreads><!-- see https://bugs.eclipse.org/bugs/show_bug.cgi?id=475098#c3 -->
+									<cleanupDaemonThreads>false</cleanupDaemonThreads><!-- see https://bugs.eclipse.org/bugs/show_bug.cgi?id=475098#c3 -->
 								</configuration>
 							</execution>
 						</executions>
@@ -426,7 +440,7 @@
 					<plugin>
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>exec-maven-plugin</artifactId>
-						<version>1.4.0</version>
+						<version>1.6.0</version>
 						<executions>
 							<execution>
 								<id>ExecuteMWE2LauncherForClean</id>
