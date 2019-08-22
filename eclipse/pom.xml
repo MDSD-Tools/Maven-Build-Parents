@@ -88,11 +88,6 @@
 								</goals>
 							</execution>
 						</executions>
-						<configuration>
-							<gpgArguments>
-								<arg>--batch</arg>
-							</gpgArguments>
-						</configuration>
 					</plugin>
 				</plugins>
 			</build>
