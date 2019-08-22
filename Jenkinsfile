@@ -1,8 +1,7 @@
-@Library('MDSDtoolsLib@addMavenSupport') _
+@Library('MDSDtoolsLib@addSonatypeDeployment') _
 MDSDToolsPipeline {
 	skipArchive true
 	skipQualityMetrics true
-	// skipDeploy should be removed before merging this to branch
 	skipDeploy false
 	skipNotification true
 	deploySonatype {
