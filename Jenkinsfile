@@ -1,4 +1,4 @@
-@Library('MDSDtoolsLib@addMavenSupport') _
+@Library('MDSDtoolsLib@addMavenSupport') 
 mdsdToolsEclipsePipeline {
 	skipArchive = true
 	skipQualityMetrics = true
