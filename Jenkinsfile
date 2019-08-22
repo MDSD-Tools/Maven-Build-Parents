@@ -1,5 +1,5 @@
 @Library('MDSDtoolsLib@addMavenSupport') _
-mdsdToolsEclipsePipeline {
+MDSDToolsPipeline {
 	skipArchive = true
 	skipQualityMetrics = true
 	deploySonatypeSettingsId = 123
