@@ -1,3 +1,4 @@
+@Library('MDSDtoolsLib@fixDockerizedMaven') _
 MDSDToolsPipeline {
 	skipArchive true
 	skipQualityMetrics true
