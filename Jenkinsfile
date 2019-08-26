@@ -1,4 +1,3 @@
-@Library('MDSDtoolsLib@addSonatypeDeployment') _
 MDSDToolsPipeline {
 	skipArchive true
 	skipQualityMetrics true
