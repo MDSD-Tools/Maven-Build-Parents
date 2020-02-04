@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>tools.mdsd</groupId>
+		<artifactId>eclipse-parent</artifactId>
+		<version>0.4.3-SNAPSHOT</version>
+	</parent>
+	<artifactId>eclipse-parent-updatesite-notp</artifactId>
+	<name>${project.artifactId}</name>
+	<description>A common parent POM for all Eclipse Update Site builds of MDSD.tools.</description>
+	<url>http://mdsd.tools</url>
+	<packaging>pom</packaging>
+
+	<profiles>
+
+		<profile>
+			<id>updatesite-build</id>
+			<activation>
+				<file>
+					<missing>.maven_disable_updatesite-build</missing>
+				</file>
+			</activation>
+			<properties>
+				<org.palladiosimulator.maven.tychotprefresh.disable>true</org.palladiosimulator.maven.tychotprefresh.disable>
+			</properties>
+			<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<groupId>org.eclipse.tycho</groupId>
+							<artifactId>target-platform-configuration</artifactId>
+							<version>${tycho.version}</version>
+							<configuration>
+								<environments>
+									<environment>
+										<os>linux</os>
+										<ws>gtk</ws>
+										<arch>x86_64</arch>
+									</environment>
+									<environment>
+										<os>win32</os>
+										<ws>win32</ws>
+										<arch>x86_64</arch>
+									</environment>
+									<environment>
+										<os>macosx</os>
+										<ws>cocoa</ws>
+										<arch>x86_64</arch>
+									</environment>
+								</environments>
+							</configuration>
+						</plugin>
+						<plugin>
+							<groupId>org.palladiosimulator</groupId>
+							<artifactId>tycho-tp-refresh-maven-plugin</artifactId>
+							<version>${org.palladiosimulator.maven.tychotprefresh.version}</version>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+			</build>
+		</profile>
+
+	</profiles>
+
+</project>
