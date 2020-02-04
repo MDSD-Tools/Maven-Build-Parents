@@ -14,8 +14,9 @@
 
 	<modules>
 		<module>eclipse</module>
-		<module>eclipse/updatesite</module>
 		<module>eclipse/product</module>
+		<module>eclipse/updatesite</module>
+		<module>eclipse/updatesite-notp</module>
 	</modules>
 
 </project>
