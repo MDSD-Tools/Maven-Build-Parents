@@ -34,8 +34,8 @@
 	</scm>
 
 	<properties>
-		<tycho.version>1.6.0</tycho.version>
-		<org.palladiosimulator.maven.tychotprefresh.version>0.2.4</org.palladiosimulator.maven.tychotprefresh.version>
+		<tycho.version>1.7.0</tycho.version>
+		<org.palladiosimulator.maven.tychotprefresh.version>0.2.5</org.palladiosimulator.maven.tychotprefresh.version>
 		<javadoc.args>
 			-tag "generated:a:Generated class or method."
 			-tag "model:a:EMF model class or method."
