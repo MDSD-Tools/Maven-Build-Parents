@@ -72,7 +72,6 @@
 			</activation>
 			<properties>
 				<tools.mdsd.dependencies.eclipse-version>2019-09</tools.mdsd.dependencies.eclipse-version>
-				<tools.mdsd.dependencies.orbit-version>R20190827152740</tools.mdsd.dependencies.orbit-version>
 				<tools.mdsd.dependencies.ecoreworkflow-version>0.1.0</tools.mdsd.dependencies.ecoreworkflow-version>
 			</properties>
 			<repositories>
@@ -84,7 +83,7 @@
 				<repository>
 					<id>eclipse-orbit</id>
 					<layout>p2</layout>
-					<url>http://download.eclipse.org/tools/orbit/downloads/drops/${tools.mdsd.dependencies.orbit-version}/repository</url>
+					<url>https://download.eclipse.org/tools/orbit/downloads/${tools.mdsd.dependencies.eclipse-version}</url>
 				</repository>
 				<repository>
 					<id>mdsd.tools-ecoreworkflow</id>
