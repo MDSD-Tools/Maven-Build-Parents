@@ -72,7 +72,7 @@
 			</activation>
 			<properties>
 				<tools.mdsd.dependencies.eclipse-version>2019-09</tools.mdsd.dependencies.eclipse-version>
-				<tools.mdsd.dependencies.ecoreworkflow-version>0.1.0</tools.mdsd.dependencies.ecoreworkflow-version>
+				<tools.mdsd.dependencies.ecoreworkflow-version>0.1.1</tools.mdsd.dependencies.ecoreworkflow-version>
 			</properties>
 			<repositories>
 				<repository>
