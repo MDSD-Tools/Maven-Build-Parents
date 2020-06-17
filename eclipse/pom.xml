@@ -47,7 +47,7 @@
 			-tag 'nooverride:a:Restriction:'
 			-tag 'category:a:Category:'
 			-link ${java.api.doc}
-			-link http://help.eclipse.org/2019-09/topic/org.eclipse.platform.doc.isv/reference/api
+			-link http://help.eclipse.org/2020-06/topic/org.eclipse.platform.doc.isv/reference/api
 			-link https://download.eclipse.org/modeling/emf/emf/javadoc/2.11/
 			-link https://download.eclipse.org/modeling/emft/mwe/javadoc/2.9/
 		</javadoc.args>
@@ -296,7 +296,7 @@
 						<plugin>
 							<groupId>org.eclipse.xtend</groupId>
 							<artifactId>xtend-maven-plugin</artifactId>
-							<version>2.19.0</version>
+							<version>2.22.0</version>
 							<executions>
 								<execution>
 									<goals>
