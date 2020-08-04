@@ -110,6 +110,7 @@
 			</activation>
 			<properties>
 				<org.palladiosimulator.maven.tychotprefresh.filter.0>nightly</org.palladiosimulator.maven.tychotprefresh.filter.0>
+				<updatesite.aggregator.filename>nightly.aggr</updatesite.aggregator.filename>
 			</properties>
 		</profile>
 
@@ -122,6 +123,7 @@
 			</activation>
 			<properties>
 				<org.palladiosimulator.maven.tychotprefresh.filter.0>release</org.palladiosimulator.maven.tychotprefresh.filter.0>
+				<updatesite.aggregator.filename>release.aggr</updatesite.aggregator.filename>
 			</properties>
 		</profile>
 
@@ -517,6 +519,64 @@
 				<target.platform.ws>cocoa</target.platform.ws>
 				<target.platform.arch>x86_64</target.platform.arch>
 			</properties>
+		</profile>
+
+		<profile>
+			<id>updatesite-maven-aggregator</id>
+			<activation>
+				<file>
+					<exists>updatesite-aggr</exists>
+				</file>
+			</activation>
+			<build>
+				<resources>
+					<resource>
+					  <directory>updatesite-aggr</directory>
+					  <filtering>true</filtering>
+					</resource>
+				  </resources>
+				<plugins>
+					<plugin>
+						<groupId>org.eclipse.tycho.extras</groupId>
+						<artifactId>tycho-eclipserun-plugin</artifactId>
+						<version>${tycho.version}</version>
+						<executions>
+						  <execution>
+							<goals>
+							  <goal>eclipse-run</goal>
+							</goals>
+							<phase>package</phase>
+						  </execution>
+						</executions>
+						<configuration>
+						  <!-- DO NOT FORMAT THE FOLLOWING LINE, IT MUST BE ON ONE LINE -->
+						  <appArgLine>-application org.eclipse.cbi.p2repo.cli.headless aggregate -data target/workspace --buildModel target/classes/${updatesite.aggregator.filename}</appArgLine>
+						  <dependencies>
+							<dependency>
+							  <artifactId>org.eclipse.cbi.p2repo.aggregator.engine.feature</artifactId>
+							  <type>eclipse-feature</type>
+							</dependency>
+							<dependency>
+							  <artifactId>org.eclipse.equinox.core.feature</artifactId>
+							  <type>eclipse-feature</type>
+							</dependency>
+							<dependency>
+							  <artifactId>org.eclipse.equinox.p2.core.feature</artifactId>
+							  <type>eclipse-feature</type>
+							</dependency>
+						  </dependencies>
+						  <repositories>
+							<repository>
+							  <id>cbi-aggregator</id>
+							  <layout>p2</layout>
+							  <url>https://download.eclipse.org/cbi/updates/aggregator/headless/4.13/I20200625-1232/</url>
+							</repository>
+						  </repositories>
+						  <executionEnvironment>JavaSE-11</executionEnvironment>
+						</configuration>
+					  </plugin>
+				</plugins>
+			</build>
 		</profile>
 
 	</profiles>
