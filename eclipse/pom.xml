@@ -203,6 +203,90 @@
 					<plugin>
 						<groupId>org.palladiosimulator</groupId>
 						<artifactId>tycho-document-bundle-plugin</artifactId>
+						<version>1.1.5</version>
+						<executions>
+							<execution>
+								<id>eclipse-javadoc</id>
+								<phase>generate-resources</phase>
+								<goals>
+									<goal>javadoc</goal>
+								</goals>
+								<configuration>
+									<outputDirectory>${project.build.directory}/repository/javadoc</outputDirectory>
+									<exportOnly>false</exportOnly>
+									<skipTocGen>true</skipTocGen>
+									<javadocOptions>
+										<additionalArguments>
+											<additionalArgument>${javadoc.args}</additionalArgument>
+											<additionalArgument>${javadoc.additional.args}</additionalArgument>
+										</additionalArguments>
+									</javadocOptions>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<profile>
+			<id>tycho-javadoc-for-bundle</id>
+			<activation>
+				<file>
+					<exists>META-INF/MANIFEST.MF</exists>
+				</file>
+				<property>
+					<name>generateJavaDocPerBundle</name>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.palladiosimulator</groupId>
+						<artifactId>tycho-document-bundle-plugin</artifactId>
+						<version>1.1.5</version>
+						<executions>
+							<execution>
+								<id>artifact-javadoc</id>
+								<phase>prepare-package</phase>
+								<goals>
+									<goal>javadoc</goal>
+								</goals>
+								<configuration>
+									<exportOnly>false</exportOnly>
+									<skipTocGen>true</skipTocGen>
+									<outputDirectory>${project.build.directory}/javadoc</outputDirectory>
+									<considerSourcesOfCurrentProject>true</considerSourcesOfCurrentProject>
+									<considerSourcesOfDependencies>false</considerSourcesOfDependencies>
+									<javadocOptions>
+										<additionalArguments>
+											<additionalArgument>${javadoc.args}</additionalArgument>
+											<additionalArgument>${javadoc.additional.args}</additionalArgument>
+										</additionalArguments>
+									</javadocOptions>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-jar-plugin</artifactId>
+						<version>3.2.0</version>
+						<executions>
+							<execution>
+								<id>artifact-javadoc-package</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+								<configuration>
+									<archive>
+										<addMavenDescriptor>false</addMavenDescriptor>
+									</archive>
+									<classesDirectory>${project.build.directory}/javadoc</classesDirectory>
+									<classifier>javadoc</classifier>
+								</configuration>
+							</execution>
+						</executions>
 					</plugin>
 				</plugins>
 			</build>
@@ -364,34 +448,7 @@
 								</includes>
 								<failIfNoTests>false</failIfNoTests>
 							</configuration>
-						</plugin>
-
-						<plugin>
-							<groupId>org.palladiosimulator</groupId>
-							<artifactId>tycho-document-bundle-plugin</artifactId>
-							<version>1.1.4</version>
-							<executions>
-								<execution>
-									<id>eclipse-javadoc</id>
-									<phase>generate-resources</phase>
-									<goals>
-										<goal>javadoc</goal>
-									</goals>
-									<configuration>
-										<outputDirectory>${project.build.directory}/repository/javadoc</outputDirectory>
-										<exportOnly>false</exportOnly>
-										<skipTocGen>true</skipTocGen>
-										<javadocOptions>
-											<additionalArguments>
-												<additionalArgument>${javadoc.args}</additionalArgument>
-												<additionalArgument>${javadoc.additional.args}</additionalArgument>
-											</additionalArguments>
-										</javadocOptions>
-									</configuration>
-								</execution>
-							</executions>
-						</plugin>
-
+						</plugin>						
 					</plugins>
 				</pluginManagement>
 			</build>
