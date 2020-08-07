@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>tools.mdsd</groupId>
-	<artifactId>eclipse-parent</artifactId>	
+	<artifactId>eclipse-parent</artifactId>
 	<version>0.5.2-SNAPSHOT</version>
 	<name>${project.artifactId}</name>
 	<description>A common parent POM for all Eclipse builds of MDSD.tools.</description>
@@ -428,7 +427,7 @@
 									</arguments>
 									<classpathScope>compile</classpathScope>
 									<includePluginDependencies>true</includePluginDependencies>
-									<cleanupDaemonThreads>false</cleanupDaemonThreads><!-- see https://bugs.eclipse.org/bugs/show_bug.cgi?id=475098#c3 -->
+									<cleanupDaemonThreads>false</cleanupDaemonThreads> <!-- see https://bugs.eclipse.org/bugs/show_bug.cgi?id=475098#c3 -->
 								</configuration>
 							</execution>
 						</executions>
@@ -466,7 +465,7 @@
 									<classpathScope>compile</classpathScope>
 									<includePluginDependencies>true</includePluginDependencies>
 									<cleanupDaemonThreads>false
-									</cleanupDaemonThreads><!-- see https://bugs.eclipse.org/bugs/show_bug.cgi?id=475098#c3 -->
+									</cleanupDaemonThreads> <!-- see https://bugs.eclipse.org/bugs/show_bug.cgi?id=475098#c3 -->
 								</configuration>
 							</execution>
 						</executions>
@@ -531,50 +530,50 @@
 			<build>
 				<resources>
 					<resource>
-					  <directory>updatesite-aggr</directory>
-					  <filtering>true</filtering>
+						<directory>updatesite-aggr</directory>
+						<filtering>true</filtering>
 					</resource>
-				  </resources>
+				</resources>
 				<plugins>
 					<plugin>
 						<groupId>org.eclipse.tycho.extras</groupId>
 						<artifactId>tycho-eclipserun-plugin</artifactId>
 						<version>${tycho.version}</version>
 						<executions>
-						  <execution>
-							<goals>
-							  <goal>eclipse-run</goal>
-							</goals>
-							<phase>package</phase>
-						  </execution>
+							<execution>
+								<goals>
+									<goal>eclipse-run</goal>
+								</goals>
+								<phase>package</phase>
+							</execution>
 						</executions>
 						<configuration>
-						  <!-- DO NOT FORMAT THE FOLLOWING LINE, IT MUST BE ON ONE LINE -->
-						  <appArgLine>-application org.eclipse.cbi.p2repo.cli.headless aggregate -data target/workspace --buildModel target/classes/${updatesite.aggregator.filename}</appArgLine>
-						  <dependencies>
-							<dependency>
-							  <artifactId>org.eclipse.cbi.p2repo.aggregator.engine.feature</artifactId>
-							  <type>eclipse-feature</type>
-							</dependency>
-							<dependency>
-							  <artifactId>org.eclipse.equinox.core.feature</artifactId>
-							  <type>eclipse-feature</type>
-							</dependency>
-							<dependency>
-							  <artifactId>org.eclipse.equinox.p2.core.feature</artifactId>
-							  <type>eclipse-feature</type>
-							</dependency>
-						  </dependencies>
-						  <repositories>
-							<repository>
-							  <id>cbi-aggregator</id>
-							  <layout>p2</layout>
-							  <url>https://download.eclipse.org/cbi/updates/aggregator/headless/4.13/I20200625-1232/</url>
-							</repository>
-						  </repositories>
-						  <executionEnvironment>JavaSE-11</executionEnvironment>
+							<!-- DO NOT FORMAT THE FOLLOWING LINE, IT MUST BE ON ONE LINE -->
+							<appArgLine>-application org.eclipse.cbi.p2repo.cli.headless aggregate -data target/workspace --buildModel target/classes/${updatesite.aggregator.filename}</appArgLine>
+							<dependencies>
+								<dependency>
+									<artifactId>org.eclipse.cbi.p2repo.aggregator.engine.feature</artifactId>
+									<type>eclipse-feature</type>
+								</dependency>
+								<dependency>
+									<artifactId>org.eclipse.equinox.core.feature</artifactId>
+									<type>eclipse-feature</type>
+								</dependency>
+								<dependency>
+									<artifactId>org.eclipse.equinox.p2.core.feature</artifactId>
+									<type>eclipse-feature</type>
+								</dependency>
+							</dependencies>
+							<repositories>
+								<repository>
+									<id>cbi-aggregator</id>
+									<layout>p2</layout>
+									<url>http://download.eclipse.org/cbi/updates/aggregator/headless/4.13/I20200625-1232/</url>
+								</repository>
+							</repositories>
+							<executionEnvironment>JavaSE-11</executionEnvironment>
 						</configuration>
-					  </plugin>
+					</plugin>
 				</plugins>
 			</build>
 		</profile>
