@@ -54,6 +54,7 @@
 		<javadoc.additional.args>
 			-link ${java.api.doc}
 		</javadoc.additional.args>
+		<updatesite.aggregator.smtpHost>smtp.ira.uka.de</updatesite.aggregator.smtpHost>
 	</properties>
 
 	<profiles>
@@ -109,7 +110,7 @@
 			</activation>
 			<properties>
 				<org.palladiosimulator.maven.tychotprefresh.filter.0>nightly</org.palladiosimulator.maven.tychotprefresh.filter.0>
-				<updatesite.aggregator.filename>nightly.aggr</updatesite.aggregator.filename>
+				<updatesite.aggregator.filename>target/classes/nightly.aggr</updatesite.aggregator.filename>
 			</properties>
 		</profile>
 
@@ -122,7 +123,7 @@
 			</activation>
 			<properties>
 				<org.palladiosimulator.maven.tychotprefresh.filter.0>release</org.palladiosimulator.maven.tychotprefresh.filter.0>
-				<updatesite.aggregator.filename>release.aggr</updatesite.aggregator.filename>
+				<updatesite.aggregator.filename>target/classes/release.aggr</updatesite.aggregator.filename>
 			</properties>
 		</profile>
 
@@ -605,8 +606,17 @@
 							</execution>
 						</executions>
 						<configuration>
-							<!-- DO NOT FORMAT THE FOLLOWING LINE, IT MUST BE ON ONE LINE -->
-							<appArgLine>-application org.eclipse.cbi.p2repo.cli.headless aggregate -data target/workspace --buildModel target/classes/${updatesite.aggregator.filename}</appArgLine>
+							<applicationsArgs>
+								<args>-application</args>
+								<args>org.eclipse.cbi.p2repo.cli.headless</args>
+								<args>aggregate</args>
+								<args>--buildModel</args>
+								<args>${updatesite.aggregator.filename}</args>^
+								<args>--smtpHost</args>
+								<args>${updatesite.aggregator.smtpHost}</args>
+								<args>--action</args>
+								<args>BUILD</args>
+							</applicationsArgs>
 							<dependencies>
 								<dependency>
 									<artifactId>org.eclipse.cbi.p2repo.aggregator.engine.feature</artifactId>
