@@ -183,10 +183,6 @@
 						<artifactId>tycho-source-plugin</artifactId>
 					</plugin>
 					<plugin>
-						<groupId>org.eclipse.tycho.extras</groupId>
-						<artifactId>tycho-source-feature-plugin</artifactId>
-					</plugin>
-					<plugin>
 						<groupId>org.eclipse.tycho</groupId>
 						<artifactId>tycho-p2-plugin</artifactId>
 					</plugin>
@@ -353,7 +349,6 @@
 			<build>
 				<pluginManagement>
 					<plugins>
-
 						<plugin>
 							<groupId>org.apache.maven.plugins</groupId>
 							<artifactId>maven-compiler-plugin</artifactId>
@@ -371,18 +366,10 @@
 										<goal>plugin-source</goal>
 									</goals>
 								</execution>
-							</executions>
-						</plugin>
-
-						<plugin>
-							<groupId>org.eclipse.tycho.extras</groupId>
-							<artifactId>tycho-source-feature-plugin</artifactId>
-							<version>${tycho.version}</version>
-							<executions>
 								<execution>
-									<id>source-feature</id>
+									<id>feature-source</id>
 									<goals>
-										<goal>source-feature</goal>
+										<goal>feature-source</goal>
 									</goals>
 								</execution>
 							</executions>
