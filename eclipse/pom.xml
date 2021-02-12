@@ -740,6 +740,7 @@
 		</profile>
 
 		<profile>
+			<id>enable-dagger</id>
 			<activation>
 				<file>
 					<exists>.enable_dagger_annotation_processing</exists>
