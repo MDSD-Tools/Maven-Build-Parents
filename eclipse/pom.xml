@@ -33,7 +33,7 @@
 	</scm>
 
 	<properties>
-		<tycho.version>2.3.0</tycho.version>
+		<tycho.version>2.5.0</tycho.version>
 		<tycho-javadoc.version>2.2.0</tycho-javadoc.version>
 		<org.palladiosimulator.maven.tychotprefresh.version>0.2.6</org.palladiosimulator.maven.tychotprefresh.version>
 		<javadoc.args>

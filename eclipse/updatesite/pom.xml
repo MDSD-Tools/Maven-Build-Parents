@@ -24,7 +24,7 @@
 				</file>
 			</activation>
 			<properties>
-				<org.palladiosimulator.maven.tychotprefresh.tplocation.0>tools.mdsd:eclipse-target-platforms:0.3.2:eclipse-modeling-2021-09:target</org.palladiosimulator.maven.tychotprefresh.tplocation.0>
+				<org.palladiosimulator.maven.tychotprefresh.tplocation.0>tools.mdsd:eclipse-target-platforms:0.3.3:eclipse-modeling-2021-09:target</org.palladiosimulator.maven.tychotprefresh.tplocation.0>
 				<org.palladiosimulator.maven.tychotprefresh.tpproject.groupId>${project.groupId}</org.palladiosimulator.maven.tychotprefresh.tpproject.groupId>
 				<org.palladiosimulator.maven.tychotprefresh.tpproject.artifactId>target-platform-merged-temporary</org.palladiosimulator.maven.tychotprefresh.tpproject.artifactId>
 				<org.palladiosimulator.maven.tychotprefresh.tpproject.version>1.0.0</org.palladiosimulator.maven.tychotprefresh.tpproject.version>
