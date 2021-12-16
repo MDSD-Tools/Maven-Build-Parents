@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>tools.mdsd</groupId>
 	<artifactId>eclipse-parent</artifactId>
-	<version>0.7.5-SNAPSHOT</version>
+	<version>0.7.6-SNAPSHOT</version>
 	<name>${project.artifactId}</name>
 	<description>A common parent POM for all Eclipse builds of MDSD.tools.</description>
 	<url>http://mdsd.tools</url>
@@ -47,7 +47,7 @@
 			-tag 'nooverride:a:Restriction:'
 			-tag 'category:a:Category:'
 			-link ${java.api.doc}
-			-link http://help.eclipse.org/2021-09/topic/org.eclipse.platform.doc.isv/reference/api
+			-link https://help.eclipse.org/2021-12/topic/org.eclipse.platform.doc.isv/reference/api
 			-link https://download.eclipse.org/modeling/emf/emf/javadoc/2.11/
 			-link https://download.eclipse.org/modeling/emft/mwe/javadoc/2.9/
 		</javadoc.args>
