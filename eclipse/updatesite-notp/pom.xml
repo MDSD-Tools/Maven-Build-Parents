@@ -81,7 +81,7 @@
 				</file>
 			</activation>
 			<properties>
-				<tools.mdsd.dependencies.eclipse-version>2021-12</tools.mdsd.dependencies.eclipse-version>
+				<tools.mdsd.dependencies.eclipse-version>2022-12</tools.mdsd.dependencies.eclipse-version>
 				<tools.mdsd.dependencies.ecoreworkflow-version>0.3.0</tools.mdsd.dependencies.ecoreworkflow-version>
 			</properties>
 			<repositories>
