@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>tools.mdsd</groupId>
 	<artifactId>eclipse-parent</artifactId>
-	<version>0.8.0-SNAPSHOT</version>
+	<version>0.8.2</version>
 	<name>${project.artifactId}</name>
 	<description>A common parent POM for all Eclipse builds of MDSD.tools.</description>
 	<url>http://mdsd.tools</url>
@@ -63,6 +63,22 @@
 		</javadoc.additional.args>
 		<updatesite.aggregator.smtpHost>smtp.ira.uka.de</updatesite.aggregator.smtpHost>
 	</properties>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.13</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 	<profiles>
 
@@ -347,8 +363,8 @@
 			<properties>
 				<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 				<project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
-				<java.version>11</java.version>
-				<java.api.doc>https://docs.oracle.com/en/java/javase/11/docs/api/</java.api.doc>
+				<java.version>17</java.version>
+				<java.api.doc>https://docs.oracle.com/en/java/javase/17/docs/api/</java.api.doc>
 				<maven.compiler.target>${java.version}</maven.compiler.target>
 				<maven.compiler.source>${java.version}</maven.compiler.source>
 			</properties>
@@ -407,6 +423,7 @@
 									</goals>
 									<configuration>
 										<outputDirectory>xtend-gen</outputDirectory>
+										<javaSourceVersion>11</javaSourceVersion>
 									</configuration>
 								</execution>
 							</executions>
@@ -658,12 +675,12 @@
 								<repository>
 									<id>cbi-aggregator</id>
 									<layout>p2</layout>
-									<url>http://download.eclipse.org/cbi/updates/aggregator/headless/4.13/</url>
+									<url>http://download.eclipse.org/cbi/updates/aggregator/headless/4.20/</url>
 								</repository>
 								<repository>
-									<id>Eclipse 2020-03</id>
+									<id>Eclipse 2021-12</id>
 									<layout>p2</layout>
-									<url>http://download.eclipse.org/releases/2020-03</url>
+									<url>http://download.eclipse.org/releases/2021-12</url>
 								</repository>
 							</repositories>
 							<work>${project.build.directory}/eclipserun-work</work>

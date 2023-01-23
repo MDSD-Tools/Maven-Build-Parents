@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>tools.mdsd</groupId>
 		<artifactId>eclipse-parent</artifactId>
-		<version>0.8.0-SNAPSHOT</version>
+		<version>0.8.2</version>
 	</parent>
 	<artifactId>eclipse-parent-updatesite</artifactId>
 	<name>${project.artifactId}</name>
@@ -54,6 +54,11 @@
 										<arch>x86_64</arch>
 									</environment>
 									<environment>
+										<os>linux</os>
+										<ws>gtk</ws>
+										<arch>aarch64</arch>
+									</environment>
+									<environment>
 										<os>win32</os>
 										<ws>win32</ws>
 										<arch>x86_64</arch>
@@ -62,6 +67,11 @@
 										<os>macosx</os>
 										<ws>cocoa</ws>
 										<arch>x86_64</arch>
+									</environment>
+									<environment>
+										<os>macosx</os>
+										<ws>cocoa</ws>
+										<arch>aarch64</arch>
 									</environment>
 								</environments>
 								<!-- fixes test execution on Java 11 -->
