@@ -53,7 +53,7 @@
 			-tag 'nooverride:a:Restriction:'
 			-tag 'category:a:Category:'
 			-link ${java.api.doc}
-			-link https://help.eclipse.org/2021-12/topic/org.eclipse.platform.doc.isv/reference/api
+			-link https://help.eclipse.org/2022-12/topic/org.eclipse.platform.doc.isv/reference/api
 			-link https://download.eclipse.org/modeling/emf/emf/javadoc/2.11/
 			-link https://download.eclipse.org/modeling/emft/mwe/javadoc/2.9/
 		</javadoc.args>
