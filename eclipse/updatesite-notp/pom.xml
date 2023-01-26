@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>tools.mdsd</groupId>
 		<artifactId>eclipse-parent</artifactId>
-		<version>0.8.3</version>
+		<version>0.8.4</version>
 	</parent>
 	<artifactId>eclipse-parent-updatesite-notp</artifactId>
 	<name>${project.artifactId}</name>
@@ -82,7 +82,6 @@
 			</activation>
 			<properties>
 				<tools.mdsd.dependencies.eclipse-version>2022-12</tools.mdsd.dependencies.eclipse-version>
-				<tools.mdsd.dependencies.ecoreworkflow-version>0.3.0</tools.mdsd.dependencies.ecoreworkflow-version>
 			</properties>
 			<repositories>
 				<repository>
@@ -98,7 +97,7 @@
 				<repository>
 					<id>mdsd.tools-ecoreworkflow</id>
 					<layout>p2</layout>
-					<url>https://updatesite.mdsd.tools/ecore-workflow/releases/${tools.mdsd.dependencies.ecoreworkflow-version}</url>
+					<url>https://updatesite.mdsd.tools/ecore-workflow/releases/latest</url>
 				</repository>
 			</repositories>
 		</profile>
