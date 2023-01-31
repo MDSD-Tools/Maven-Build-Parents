@@ -40,7 +40,7 @@
 
 	<properties>
 		<tycho.version>2.7.5</tycho.version>
-		<tycho-javadoc.version>2.7.5</tycho-javadoc.version>
+		<tycho-javadoc.version>2.2.0</tycho-javadoc.version>
 		<org.palladiosimulator.maven.tychotprefresh.version>0.2.6</org.palladiosimulator.maven.tychotprefresh.version>
 		<javadoc.args>
 			-tag "generated:a:Generated class or method."
