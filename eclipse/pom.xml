@@ -675,7 +675,7 @@
 								<repository>
 									<id>cbi-aggregator</id>
 									<layout>p2</layout>
-									<url>http://download.eclipse.org/cbi/updates/aggregator/headless/4.20/</url>
+									<url>http://download.eclipse.org/cbi/updates/aggregator/headless/4.13/</url>
 								</repository>
 								<repository>
 									<id>Eclipse 2021-12</id>
