@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>tools.mdsd</groupId>
 		<artifactId>eclipse-parent</artifactId>
-		<version>0.8.7</version>
+		<version>0.8.8</version>
 	</parent>
 	<artifactId>eclipse-parent-updatesite-notp</artifactId>
 	<name>${project.artifactId}</name>
@@ -81,7 +81,7 @@
 				</file>
 			</activation>
 			<properties>
-				<tools.mdsd.dependencies.eclipse-version>2022-12</tools.mdsd.dependencies.eclipse-version>
+				<tools.mdsd.dependencies.eclipse-version>2023-06</tools.mdsd.dependencies.eclipse-version>
 			</properties>
 			<repositories>
 				<repository>

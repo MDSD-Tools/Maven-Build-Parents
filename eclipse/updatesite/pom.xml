@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>tools.mdsd</groupId>
 		<artifactId>eclipse-parent</artifactId>
-		<version>0.8.7</version>
+		<version>0.8.8</version>
 	</parent>
 	<artifactId>eclipse-parent-updatesite</artifactId>
 	<name>${project.artifactId}</name>
@@ -24,7 +24,7 @@
 				</file>
 			</activation>
 			<properties>
-				<org.palladiosimulator.maven.tychotprefresh.tplocation.0>tools.mdsd:eclipse-target-platforms:0.3.7:eclipse-modeling-2022-12:target</org.palladiosimulator.maven.tychotprefresh.tplocation.0>
+				<org.palladiosimulator.maven.tychotprefresh.tplocation.0>tools.mdsd:eclipse-target-platforms:0.3.8:eclipse-modeling-2023-06:target</org.palladiosimulator.maven.tychotprefresh.tplocation.0>
 				<org.palladiosimulator.maven.tychotprefresh.tpproject.groupId>${project.groupId}</org.palladiosimulator.maven.tychotprefresh.tpproject.groupId>
 				<org.palladiosimulator.maven.tychotprefresh.tpproject.artifactId>target-platform-merged-temporary</org.palladiosimulator.maven.tychotprefresh.tpproject.artifactId>
 				<org.palladiosimulator.maven.tychotprefresh.tpproject.version>1.0.0</org.palladiosimulator.maven.tychotprefresh.tpproject.version>
