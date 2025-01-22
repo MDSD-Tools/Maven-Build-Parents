@@ -80,19 +80,16 @@
 					<missing>.maven_disable_default-dependencies</missing>
 				</file>
 			</activation>
-			<properties>
-				<tools.mdsd.dependencies.eclipse-version>2023-09</tools.mdsd.dependencies.eclipse-version>
-			</properties>
 			<repositories>
 				<repository>
 					<id>eclipse</id>
 					<layout>p2</layout>
-					<url>http://download.eclipse.org/releases/${tools.mdsd.dependencies.eclipse-version}</url>
+					<url>https://download.eclipse.org/releases/2023-09</url>
 				</repository>
 				<repository>
 					<id>eclipse-orbit</id>
 					<layout>p2</layout>
-					<url>http://download.eclipse.org/tools/orbit/downloads/${tools.mdsd.dependencies.eclipse-version}</url>
+					<url>https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/release/4.29.0/</url>
 				</repository>
 				<repository>
 					<id>mdsd.tools-ecoreworkflow</id>
