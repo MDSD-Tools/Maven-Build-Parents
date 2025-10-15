@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>tools.mdsd</groupId>
 		<artifactId>eclipse-parent</artifactId>
-		<version>0.8.11</version>
+		<version>0.8.12</version>
 	</parent>
 	<artifactId>eclipse-parent-updatesite-notp</artifactId>
 	<name>${project.artifactId}</name>
@@ -89,7 +89,7 @@
 				<repository>
 					<id>eclipse-orbit</id>
 					<layout>p2</layout>
-					<url>https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/release/4.27.0/</url>
+					<url>https://download.eclipse.org/tools/orbit/downloads/2023-03/</url>
 				</repository>
 				<repository>
 					<id>mdsd.tools-ecoreworkflow</id>
