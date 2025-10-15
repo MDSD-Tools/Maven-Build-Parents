@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>tools.mdsd</groupId>
 	<artifactId>eclipse-parent</artifactId>
-	<version>0.8.10</version>
+	<version>0.8.11</version>
 	<name>${project.artifactId}</name>
 	<description>A common parent POM for all Eclipse builds of MDSD.tools.</description>
 	<url>http://mdsd.tools</url>
@@ -67,14 +67,15 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.sonatype.plugins</groupId>
-				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>1.6.13</version>
+				<groupId>org.sonatype.central</groupId>
+				<artifactId>central-publishing-maven-plugin</artifactId>
+				<version>0.7.0</version>
 				<extensions>true</extensions>
 				<configuration>
-					<serverId>ossrh</serverId>
-					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+					<publishingServerId>central</publishingServerId>
+					<centralBaseUrl>https://central.sonatype.com</centralBaseUrl>
+					<autoPublish>true</autoPublish>
+					<waitUntil>published</waitUntil>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -82,26 +83,16 @@
 
 	<profiles>
 
-		<!-- Build configuration of parent POM itself -->
+		<!-- Build configuration of project itself -->
 		<profile>
 			<id>local-build-deployable</id>
 			<!-- activate this profile explicitly by adding -Plocal-build-deployable to the maven command -->
-			<distributionManagement>
-				<snapshotRepository>
-					<id>ossrh</id>
-					<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-				</snapshotRepository>
-				<repository>
-					<id>ossrh</id>
-					<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-				</repository>
-			</distributionManagement>
 			<build>
 				<plugins>
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-gpg-plugin</artifactId>
-						<version>1.6</version>
+						<version>3.2.7</version>
 						<executions>
 							<execution>
 								<id>sign-artifacts</id>
@@ -109,14 +100,14 @@
 								<goals>
 									<goal>sign</goal>
 								</goals>
+								<configuration>
+									<gpgArguments>
+										<arg>--pinentry-mode</arg>
+										<arg>loopback</arg>
+									</gpgArguments>
+								</configuration>
 							</execution>
 						</executions>
-						<configuration>
-							<gpgArguments>
-								<arg>--pinentry-mode</arg>
-								<arg>loopback</arg>
-							</gpgArguments>
-						</configuration>
 					</plugin>
 				</plugins>
 			</build>
@@ -135,30 +126,6 @@
 				<org.palladiosimulator.maven.tychotprefresh.filter.0>nightly</org.palladiosimulator.maven.tychotprefresh.filter.0>
 				<updatesite.aggregator.filename>target/classes/nightly.aggr</updatesite.aggregator.filename>
 			</properties>
-
-			<pluginRepositories>
-				<pluginRepository>
-					<id>sonatype-snapshots</id>
-					<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-					<releases>
-						<enabled>false</enabled>
-					</releases>
-					<snapshots>
-						<updatePolicy>always</updatePolicy>
-					</snapshots>
-				 </pluginRepository>
-				 <pluginRepository>
-					<id>tycho-snapshots</id>
-					<url>https://repo.eclipse.org/content/repositories/tycho-snapshots/</url>
-					<releases>
-						<enabled>false</enabled>
-					</releases>
-					<snapshots>
-						<updatePolicy>always</updatePolicy>
-					</snapshots>
-				 </pluginRepository>
-			 </pluginRepositories>
-		</profile>
 
 		<profile>
 			<id>release</id>
