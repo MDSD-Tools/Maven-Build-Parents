@@ -126,6 +126,7 @@
 				<org.palladiosimulator.maven.tychotprefresh.filter.0>nightly</org.palladiosimulator.maven.tychotprefresh.filter.0>
 				<updatesite.aggregator.filename>target/classes/nightly.aggr</updatesite.aggregator.filename>
 			</properties>
+		</profile>
 
 		<profile>
 			<id>release</id>
